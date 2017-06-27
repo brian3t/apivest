@@ -63,7 +63,6 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $user = User::find()->where(['=','email','ngxtri@gmail.com'])->one();
-        var_dump(is_object($user)?$user->attributes:'');
         return $this->render('index');
     }
 
