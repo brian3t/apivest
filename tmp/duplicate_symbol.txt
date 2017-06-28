@@ -1,0 +1,8 @@
+both nasdaq and NYSE:
+
+AMOV
+FCFS
+LLEX
+MSG
+PGTI
+RRD

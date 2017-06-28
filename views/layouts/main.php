@@ -21,35 +21,47 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/ionicons.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/morris.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/fullcalendar.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/AdminLTE.css" rel="stylesheet" type="text/css"/>
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
 </head>
-<body>
+<body class="skin-blue fixed">
 <?php $this->beginBody() ?>
 
-<div class="wrap">
+<header class="header">
+    <a href="/" class="logo">
+        VestChallenge API
+    </a>
     <?php
     NavBar::begin([
         'brandLabel' => 'Vest Challenge API',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => 'navbar navbar-static-top',
         ],
     ]);
     $menu_items = [
-        ['label' => 'Home','url' => ['/site/index']],
+        ['label' => 'Home', 'url' => ['/site/index']],
     ];
-    if(Yii::$app->user->isGuest)
-    {
-        $menu_items = array_merge($menu_items,[
+    if (Yii::$app->user->isGuest) {
+        $menu_items = array_merge($menu_items, [
             ['label' => 'Sign in', 'url' => ['/user/security/login']],
-            ['label' => 'Sign Up','url' => '/user/registration/register']
+            ['label' => 'Sign Up', 'url' => '/user/registration/register']
         ]);
-    } else
-    {
-        $menu_items = array_merge($menu_items,[
+    } else {
+        $menu_items = array_merge($menu_items, [
             ['label' => 'Sign out (' . Yii::$app->user->identity->username . ')',
                 'url' => ['/user/security/logout'],
                 'linkOptions' => ['data-method' => 'post']],
-            ['label' => 'Register', 'url' => ['/user/registration/register'], 'visible' => Yii::$app->user->isGuest]        ]);
+            ['label' => 'Register', 'url' => ['/user/registration/register'], 'visible' => Yii::$app->user->isGuest]]);
     }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
@@ -57,24 +69,78 @@ AppAsset::register($this);
     ]);
     NavBar::end();
     ?>
+</header>
+<div class="wrapper row-offcanvas row-offcanvas-left">
+    <aside class="left-side sidebar-offcanvas">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <div class="user-panel">
+                <div class="pull-left image">
+                </div>
+                <div class="pull-left info">
+                    <p>Hello, <?= Yii::$app->user->identity->username ?></p>
 
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
+                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                </div>
+            </div>
+            <!-- search form -->
+<!--            <form action="#" method="get" class="sidebar-form">-->
+<!--                <div class="input-group">-->
+<!--                    <input type="text" name="q" class="form-control" placeholder="Search..."/>-->
+<!--                    <span class="input-group-btn">-->
+<!--                                <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>-->
+<!--                            </span>-->
+<!--                </div>-->
+<!--            </form>-->
+            <!-- /.search form -->
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu">
+                <li class="active">
+                    <a href="/">
+                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/stock">
+                        <i class="fa fa-bar-chart-o"></i> <span>Stock</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Breadcrumb here
+
+        -->
+    <aside class="right-side">
         <?= $content ?>
-    </div>
+    </aside>
+
 </div>
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left"></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-right">&copy; 2017 VestChallenge Pte. Ltd.</p>
     </div>
 </footer>
 
 <?php $this->endBody() ?>
+<script src="/js/raphael.min.js"></script>
+<script src="/js/morris.min.js"></script>
+<script src="/js/jquery.sparkline.min.js" type="text/javascript"></script>
+<script src="/js/jquery-jvectormap-1.2.2.min.js" type="text/javascript"></script>
+<script src="/js/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
+<script src="/js/moment.min.js" type="text/javascript"></script>
+<script src="/js/fullcalendar.min.js" type="text/javascript"></script>
+<script src="/js/jquery.knob.min.js" type="text/javascript"></script>
+<script src="/js/icheck.min.js" type="text/javascript"></script>
+<script src="/js/AdminLTE/app.js" type="text/javascript"></script>
+
+
 </body>
 </html>
 <?php $this->endPage() ?>
