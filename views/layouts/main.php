@@ -79,7 +79,7 @@ AppAsset::register($this);
                 <div class="pull-left image">
                 </div>
                 <div class="pull-left info">
-                    <p>Hello, <?= Yii::$app->user->identity->username ?></p>
+                    <p>Hello, <?= (is_object(Yii::$app->user->identity)?Yii::$app->user->identity->username:'Guest') ?></p>
 
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>

@@ -16,10 +16,10 @@ $user = Yii::$app->user->identity;
                     <div class="pull-right box-tools">
                         <button class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove"><i class="fa fa-times"></i></button>
                     </div>
-                    <div class="box-title">User's portfolio:</div>
+                    <div class="box-title">My portfolio:</div>
                 </div>
-                <!--                    --><? //= $user->portfolio_html ?>
-                <div class="box-body">AAPL 5 stocks</div>
+
+                <div class="box-body"><?php echo $user->portfolio_html('short') ?></div>
             </div>
         </div>
     </div>
