@@ -19,7 +19,8 @@
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
         "dektrium/yii2-user": "^0.9.12",
-        "mootensai/yii2-enhanced-gii": "dev-master"
+        "mootensai/yii2-enhanced-gii": "dev-master",
+        "kartik-v/yii2-datecontrol": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

@@ -1,0 +1,15 @@
+{
+  "action": "order_pull",
+  "channel_info": {
+    "id": 21
+  },
+  "client_id": 497,
+  "integration_auth_token": "RETAILOPS_SDK",
+  "page_token": "string",
+  "specific_orders": [
+    {
+      "channel_refnum": "141"
+    }
+  ],
+  "version": 1
+}

@@ -1,0 +1,67 @@
+{
+  "next_page_token": "",
+  "orders": [
+    {
+      "shipping_amt": 0.25,
+      "calc_mode": "order",
+      "channel_date_created": "2016-07-07T15:37:58+00:00",
+      "payment": [
+        {
+          "amount": 1.32,
+          "type": "charge",
+          "channel_refnum": null,
+          "payment_type": null,
+          "payment_params": {
+            "channel_refnum": 496,
+            "payment_type": "Visa"
+          }
+        }
+      ],
+      "tax_amt": 0.07,
+      "bill_addr": {
+        "first_name": "John",
+        "last_name": "Smith",
+        "company": "gudTECH",
+        "address1": "600 B Street, Suite 2120",
+        "address2": "",
+        "city": "San Diego",
+        "state_match": "CA",
+        "country_match": "USA",
+        "postal_code": "92101"
+      },
+      "gift_message": "Happy Birthday",
+      "ship_addr": {
+        "first_name": "John",
+        "last_name": "Smith",
+        "company": "gudTECH",
+        "address1": "600 B Street, Suite 2120",
+        "address2": "",
+        "city": "San Diego",
+        "state_match": "CA",
+        "country_match": "USA",
+        "postal_code": "92101"
+      },
+      "channel_refnum": "496",
+      "customer": {
+        "first_name": "John",
+        "last_name": "Smith",
+        "email_address": "john.smith@gmail.com",
+        "phone_number": "123 456-7890"
+      },
+      "discount_amt": 0,
+      "shipcode": "Ground (5-7 days)",
+      "ip_address": "192.168.1.187",
+      "attributes": [],
+      "items": [
+        {
+          "channel_refnum": "496",
+          "sku": 299,
+          "unit_tax": 0,
+          "quantity": 1,
+          "sku_title": "test product",
+          "unit_price": 1
+        }
+      ]
+    }
+  ]
+}

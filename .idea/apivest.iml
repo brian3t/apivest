@@ -57,7 +57,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/bootstrap-star-rating" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/bootstrap-tabs-x" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/dependent-dropdown" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/php-date-formatter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-builder" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-datecontrol" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-dialog" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-dynagrid" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-export" />
@@ -148,6 +150,12 @@
       <library name="PHP" type="php">
         <CLASSES>
           <root url="file://$MODULE_DIR$/vendor/behat/gherkin" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/bootstrap" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/jquery" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/jquery.inputmask" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/punycode" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/typeahead.js" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/yii2-pjax" />
           <root url="file://$MODULE_DIR$/vendor/bower/bootstrap" />
           <root url="file://$MODULE_DIR$/vendor/bower/bootstrap3-dialog" />
           <root url="file://$MODULE_DIR$/vendor/bower/jquery" />
@@ -169,7 +177,9 @@
           <root url="file://$MODULE_DIR$/vendor/kartik-v/bootstrap-star-rating" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/bootstrap-tabs-x" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/dependent-dropdown" />
+          <root url="file://$MODULE_DIR$/vendor/kartik-v/php-date-formatter" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-builder" />
+          <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-datecontrol" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-dialog" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-dynagrid" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-export" />
@@ -257,6 +267,12 @@
         <JAVADOC />
         <SOURCES>
           <root url="file://$MODULE_DIR$/vendor/behat/gherkin" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/bootstrap" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/jquery" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/jquery.inputmask" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/punycode" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/typeahead.js" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/yii2-pjax" />
           <root url="file://$MODULE_DIR$/vendor/bower/bootstrap" />
           <root url="file://$MODULE_DIR$/vendor/bower/bootstrap3-dialog" />
           <root url="file://$MODULE_DIR$/vendor/bower/jquery" />
@@ -278,7 +294,9 @@
           <root url="file://$MODULE_DIR$/vendor/kartik-v/bootstrap-star-rating" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/bootstrap-tabs-x" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/dependent-dropdown" />
+          <root url="file://$MODULE_DIR$/vendor/kartik-v/php-date-formatter" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-builder" />
+          <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-datecontrol" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-dialog" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-dynagrid" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-export" />

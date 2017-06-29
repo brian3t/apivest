@@ -106,6 +106,11 @@ AppAsset::register($this);
                         <i class="fa fa-bar-chart-o"></i> <span>Stock</span>
                     </a>
                 </li>
+                <li>
+                    <a href="/transaction">
+                        <i class="fa fa-handshake-o"></i> <span>Buy/Sell Stock</span>
+                    </a>
+                </li>
             </ul>
         </section>
         <!-- /.sidebar -->

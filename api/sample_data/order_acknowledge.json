@@ -1,0 +1,16 @@
+{
+  "events": [
+    {
+      "event_type": "warning",
+      "code": "1234",
+      "message": "Example warning message",
+      "diagnostic_data": "",
+      "associations": [
+        {
+          "identifier_type": "order_id",
+          "identifier": "S1234"
+        }
+      ]
+    }
+  ]
+}

@@ -10,7 +10,7 @@ $user = Yii::$app->user->identity;
 <section class="content-header"><h3>Dashboard</h3></section>
 <section class="content">
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-sm-6 col-xs-12">
             <div class="box">
                 <div class="box-header">
                     <div class="pull-right box-tools">
@@ -22,5 +22,6 @@ $user = Yii::$app->user->identity;
                 <div class="box-body"><?php echo $user->portfolio_html('short') ?></div>
             </div>
         </div>
+        <div class="col-sm-6 hidden-xs"></div>
     </div>
 </section>
