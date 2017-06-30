@@ -34,7 +34,9 @@ use yii\widgets\ActiveForm;
     ]); ?>
 
     <?= $form->field($model, 'stock_id')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\app\models\Stock::find()->orderBy('id')->asArray()->all(), 'id', 'name'),
+        'data' => \yii\helpers\ArrayHelper::map(\app\models\Stock::find()->orderBy('id')->asArray()->all(), 'id', function($v){
+            return $v['name']. ' - '. $v['symbol'];
+        }),
         'options' => ['placeholder' => 'Choose Stock', 'id' => 'stock_id'],
         'pluginOptions' => [
             'allowClear' => true

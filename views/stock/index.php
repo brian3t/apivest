@@ -20,9 +20,6 @@ $this->registerJs($search);
 </section>
 <section class="content">
     <div class="stock-index">
-        <p>
-            <?= Html::a('Create Stock', ['create'], ['class' => 'btn btn-success']) ?>
-        </p>
         <?php
         $gridColumn = [
             ['class' => 'yii\grid\SerialColumn'],

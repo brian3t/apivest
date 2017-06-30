@@ -103,58 +103,10 @@ AppAsset::register($this);
                         <li>
                             <!-- inner menu: contains the actual data -->
                             <ul class="menu">
-                                <li><!-- start message -->
-                                    <a href="#">
-                                        <div class="pull-left">
-                                            <img src="img/avatar3.png" class="img-circle" alt="User Image"/>
-                                        </div>
-                                        <h4>
-                                            Support Team
-                                            <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                        </h4>
-                                        <p>Why not buy a new awesome theme?</p>
-                                    </a>
-                                </li><!-- end message -->
                                 <li>
                                     <a href="#">
                                         <div class="pull-left">
-                                            <img src="img/avatar2.png" class="img-circle" alt="user image"/>
-                                        </div>
-                                        <h4>
-                                            AdminLTE Design Team
-                                            <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                                        </h4>
-                                        <p>Why not buy a new awesome theme?</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="pull-left">
-                                            <img src="img/avatar.png" class="img-circle" alt="user image"/>
-                                        </div>
-                                        <h4>
-                                            Developers
-                                            <small><i class="fa fa-clock-o"></i> Today</small>
-                                        </h4>
-                                        <p>Why not buy a new awesome theme?</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="pull-left">
-                                            <img src="img/avatar2.png" class="img-circle" alt="user image"/>
-                                        </div>
-                                        <h4>
-                                            Sales Department
-                                            <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                                        </h4>
-                                        <p>Why not buy a new awesome theme?</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="pull-left">
-                                            <img src="img/avatar.png" class="img-circle" alt="user image"/>
+                                            <img class="img-circle" alt="user image"/>
                                         </div>
                                         <h4>
                                             Reviewers
@@ -242,6 +194,7 @@ AppAsset::register($this);
 <script src="/js/jquery-jvectormap-1.2.2.min.js" type="text/javascript"></script>
 <script src="/js/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
 <script src="/js/moment.min.js" type="text/javascript"></script>
+<script src="/js/lodash.core.min.js" type="text/javascript"></script>
 <script src="/js/fullcalendar.min.js" type="text/javascript"></script>
 <script src="/js/jquery.knob.min.js" type="text/javascript"></script>
 <script src="/js/icheck.min.js" type="text/javascript"></script>
