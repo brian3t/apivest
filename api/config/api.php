@@ -38,7 +38,7 @@ $config = [
                 [
                     'class' => 'yii\rest\UrlRule',
                     'pluralize' => false,
-                    'controller' => ['v1/stock'],
+                    'controller' => ['v1/stock','v1/user','v1/transaction'],
                     'patterns' => ['PUT,PATCH {id}' => 'update', 'DELETE {id}' => 'delete', 'GET,HEAD {id}' => 'view', 'POST' => 'create', 'GET,HEAD' => 'index', '{id}' => 'options', '' => 'options'],
                     // 'extraPatterns' => [
                     // ],
@@ -59,11 +59,6 @@ $config = [
                         'POST push' => 'push'
                     ],
                 ],
-                // [
-                //     '<controller:(catalog|inventory|order)>_<action:(pull)>_v1' => 'v1/<controller>/<action>',
-                //     // 'posts' => 'post/index',
-                //     // 'post/<id:\d+>' => 'post/view',
-                // ]
             ]
         ],
         'db' => $db,

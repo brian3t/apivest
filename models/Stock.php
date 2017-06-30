@@ -11,26 +11,20 @@ use \app\models\base\Stock as BaseStock;
 class Stock extends BaseStock
 {
     /**
-     * @inheritdoc
+     * @return array Fields for REST API calls
      */
-    public function rules()
+    public function fields()
     {
-        return array_replace_recursive(parent::rules(),
-	    [
-            [['symbol', 'name'], 'required'],
-            [['last_sale', 'market_cap'], 'number'],
-            [['ipo_year'], 'integer'],
-            [['created_at', 'updated_at'], 'safe'],
-            [['symbol'], 'string', 'max' => 12],
-            [['name', 'industry'], 'string', 'max' => 80],
-            [['last_sale_text'], 'string', 'max' => 30],
-            [['ipo_year_text'], 'string', 'max' => 20],
-            [['sector'], 'string', 'max' => 100],
-            [['summary_quote'], 'string', 'max' => 255],
-            [['exchange'], 'string', 'max' => 15],
-            [['country'], 'string', 'max' => 2],
-            [['symbol'], 'unique']
-        ]);
+        return [
+            'id',
+            'symbol',
+            'name',
+            'last_sale',
+            'market_cap',
+            'ipo_year',
+            'sector',
+            'industry',
+            'exchange'
+        ];
     }
-	
 }

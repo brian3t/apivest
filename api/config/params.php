@@ -1,3 +1,3 @@
 <?php
 
-define('BASE_API_URL', 'http://api.apivest/v1/');
+define('BASE_API_URL', 'http://apivest/v1/');

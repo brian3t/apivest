@@ -32,7 +32,9 @@ class BaseIndexAction extends IndexAction
         $modelClass=$this->modelClass;
         $ap=new ActiveDataProvider([
             'query'=>$modelClass::find()->where(\Yii::$app->request->queryParams),
-            'pagination'=>false
+            'pagination'=>[
+                'pageSize' => 20
+            ]
         ]);
         $ap->setSort(['defaultOrder'=>[$order_by_col=>SORT_ASC]]);
         return $ap;

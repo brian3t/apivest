@@ -40,7 +40,7 @@ use yii\widgets\ActiveForm;
             'allowClear' => true
         ],
     ]); ?>
-    <?= $form->field($model, 'unit_cost')->textInput(['maxlength' => true, 'placeholder' => 'Unit Cost', 'readonly' => true, 'id' => 'unit_cost']) ?>
+    <?= $form->field($model, 'unit_cost')->textInput(['maxlength' => true, 'placeholder' => 'Unit Cost', 'readonly' => false, 'id' => 'unit_cost']) ?>
 
     <?= $form->field($model, 'qty_bought')->textInput(['placeholder' => 'Qty to Buy (enter negative value if selling)']) ?>
 

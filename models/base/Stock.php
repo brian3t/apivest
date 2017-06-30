@@ -10,9 +10,9 @@ use Yii;
  * @property integer $id
  * @property string $symbol
  * @property string $name
- * @property string $last_sale
+ * @property double $last_sale
  * @property string $last_sale_text
- * @property string $market_cap
+ * @property double $market_cap
  * @property string $ipo_year_text
  * @property integer $ipo_year
  * @property string $sector
@@ -24,7 +24,6 @@ use Yii;
  * @property string $updated_at
  *
  * @property \app\models\Transaction[] $transactions
- * @property \app\models\UserStockNa[] $userStockNas
  */
 class Stock extends \yii\db\ActiveRecord
 {
@@ -36,22 +35,22 @@ class Stock extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['symbol', 'name'], 'required'],
-            [['last_sale', 'market_cap'], 'number'],
-            [['ipo_year'], 'integer'],
-            [['created_at', 'updated_at'], 'safe'],
-            [['symbol'], 'string', 'max' => 12],
-            [['name', 'industry'], 'string', 'max' => 80],
-            [['last_sale_text'], 'string', 'max' => 30],
-            [['ipo_year_text'], 'string', 'max' => 20],
-            [['sector'], 'string', 'max' => 100],
-            [['summary_quote'], 'string', 'max' => 255],
-            [['exchange'], 'string', 'max' => 15],
-            [['country'], 'string', 'max' => 2],
-            [['symbol'], 'unique']
+            [['symbol','name'],'required'],
+            [['last_sale','market_cap'],'number'],
+            [['ipo_year'],'integer'],
+            [['created_at','updated_at'],'safe'],
+            [['symbol'],'string','max' => 12],
+            [['name','industry'],'string','max' => 80],
+            [['last_sale_text'],'string','max' => 30],
+            [['ipo_year_text'],'string','max' => 20],
+            [['sector'],'string','max' => 100],
+            [['summary_quote'],'string','max' => 255],
+            [['exchange'],'string','max' => 15],
+            [['country'],'string','max' => 2],
+            [['symbol'],'unique']
         ];
     }
-    
+
     /**
      * @inheritdoc
      */
@@ -81,20 +80,13 @@ class Stock extends \yii\db\ActiveRecord
             'country' => 'Country',
         ];
     }
-    
+
     /**
      * @return \yii\db\ActiveQuery
      */
     public function getTransactions()
     {
-        return $this->hasMany(\app\models\Transaction::className(), ['stock_id' => 'id'])->inverseOf('stock');
+        return $this->hasMany(\app\models\Transaction::className(),['stock_id' => 'id'])->inverseOf('stock');
     }
-        
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getUserStockNas()
-    {
-        return $this->hasMany(\app\models\UserStockNa::className(), ['stock_id' => 'id'])->inverseOf('stock');
-    }
-    }
+
+}
