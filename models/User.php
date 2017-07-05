@@ -63,7 +63,8 @@ class User extends \app\models\base\User
                                             <th>Stock</th>
                                             <th>Company</th>
                                             <th>Quantity Owned</th>
-                                            <th>Value</th>
+                                            <th>Unit Value</th>
+                                            <th>Total Value</th>
                                         </tr>';
         $index = 0;
         foreach ($portfolio['stocks'] as $stock_id => $stock) {
@@ -74,6 +75,7 @@ class User extends \app\models\base\User
             $html .= '<td>' . ($stock['stock'])->name . '</td>';
             $html .= '<td>' . $stock['qty'] . '</td>';
             $html .= '<td>$' . money_format('%6.4n', ($stock['stock'])->last_sale) . '</td>';
+            $html .= '<td>$' . money_format('%6.4n', $stock['qty'] * ($stock['stock'])->last_sale) . '</td>';
             $html .= '</tr>';
         }
         //summary
@@ -82,7 +84,8 @@ class User extends \app\models\base\User
         $html .= '<td>Total</td>';
         $html .= '<td></td>';
         $html .= '<td>' . $portfolio['sum_qty'] . '</td>';
-        $html .= '<td>$' . money_format('%6.4n', ($stock['stock'])->last_sale) . '</td>';
+        $html .= '<td></td>';
+        $html .= '<td>$' . money_format('%6.4n', $portfolio['sum_value']) . '</td>';
         $html .= '</tr>';
 
 

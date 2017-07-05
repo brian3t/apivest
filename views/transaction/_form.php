@@ -42,6 +42,10 @@ use yii\widgets\ActiveForm;
             'allowClear' => true
         ],
     ]); ?>
+    <div class="col-xs-12" >
+        <a href="" id="link" target="_blank" style="display: none">Click here for stock information</a>
+    </div>
+
     <?= $form->field($model, 'unit_cost')->textInput(['maxlength' => true, 'placeholder' => 'Unit Cost', 'readonly' => false, 'id' => 'unit_cost']) ?>
 
     <?= $form->field($model, 'qty_bought')->textInput(['placeholder' => 'Qty to Buy (enter negative value if selling)']) ?>
