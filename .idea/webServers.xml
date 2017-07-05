@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="0b3e1c6f-c59c-421d-9c08-63cee356cb20" name="apivest" url="http://vestchallenge.com">
+      <webServer id="0b3e1c6f-c59c-421d-9c08-63cee356cb20" name="apivest (project level)" url="http://vestchallenge.com">
         <fileTransfer host="vestchallenge.com" port="21" rootFolder="/apivest">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />

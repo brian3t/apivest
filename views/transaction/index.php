@@ -17,9 +17,9 @@ $this->registerJs($search);
 ?>
 
 <section class="content-header"><h3>Transaction</h3>
-<p>
-    <?= Html::a('Buy/Sell Stock', ['create'], ['class' => 'btn btn-success']) ?>
-</p></section>
+    <p>
+        <?= Html::a('Buy/Sell Stock', ['create'], ['class' => 'btn btn-success']) ?>
+    </p></section>
 <section class="content">
     <div class="row">
         <div class="col-xs-12">
@@ -67,8 +67,28 @@ $this->registerJs($search);
                         ],
                         'filterInputOptions' => ['placeholder' => 'Stock', 'id' => 'grid--stock_id']
                     ],
-                    'qty_bought',
-                    'unit_cost',
+                    [
+                        'attribute' => 'is_buying',
+                        'label' => 'Bought or Sold',
+                        'value' => function ($model) {
+                            return $model->is_buying ? 'Bought' : 'Sold';
+                        },
+                        'filterType' => GridView::FILTER_SELECT2,
+                        'filter' => \yii\helpers\ArrayHelper::map(\app\models\Stock::find()->asArray()->all(), 'id', 'name'),
+                        'filterWidgetOptions' => [
+                            'pluginOptions' => ['allowClear' => true],
+                        ],
+                        'filterInputOptions' => ['placeholder' => 'Stock', 'id' => 'grid--stock_id']
+                    ],
+                    ['label' => 'Initially Bought For',
+                        'value' => function ($model) {
+                            return 0;//todob here find value when stock was initially bought. If this transaction is_buying, skip this
+                        }],
+                    ['attribute' => 'profit',
+                        'label' => 'Value Gained/Lost',
+                        'value' => function ($model) {
+                            return -1;//todob here calculate difference of value when sold and value when initially bought
+                        }],
                     [
                         'class' => 'yii\grid\ActionColumn',
                         'template' => '{save-as-new} {view} {update} {delete}',
@@ -78,6 +98,9 @@ $this->registerJs($search);
                             },
                         ],
                     ],
+                    ['label' => 'Description', 'value' => function ($model) {
+                        return 'Here is what you did';//todob explain here what happened
+                    }]
                 ];
                 ?>
                 <?= GridView::widget([

@@ -48,9 +48,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'unit_cost')->textInput(['maxlength' => true, 'placeholder' => 'Unit Cost', 'readonly' => false, 'id' => 'unit_cost']) ?>
 
-    <?= $form->field($model, 'qty_bought')->textInput(['placeholder' => 'Qty to Buy (enter negative value if selling)']) ?>
-
-
     <div class="form-group">
         <?php if (Yii::$app->controller->action->id != 'save-as-new'): ?>
             <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

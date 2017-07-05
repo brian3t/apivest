@@ -10,6 +10,7 @@ use Yii;
  * @property integer $id
  * @property integer $user_id
  * @property integer $stock_id
+ * @property integer $is_buying
  * @property string $created_at
  * @property integer $qty_bought
  * @property string $unit_cost
@@ -28,8 +29,8 @@ class Transaction extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'stock_id', 'qty_bought', 'unit_cost'], 'required'],
-            [['user_id', 'stock_id', 'qty_bought'], 'integer'],
+            [['user_id', 'stock_id', 'unit_cost'], 'required'],
+            [['user_id', 'stock_id', 'is_buying', 'qty_bought'], 'integer'],
             [['created_at'], 'safe'],
             [['unit_cost'], 'number'],
             [['user_id', 'stock_id', 'created_at'], 'unique', 'targetAttribute' => ['user_id', 'stock_id', 'created_at'], 'message' => 'The combination of User ID, Stock ID and Created At has already been taken.']
@@ -53,6 +54,7 @@ class Transaction extends \yii\db\ActiveRecord
             'id' => 'ID',
             'user_id' => 'User ID',
             'stock_id' => 'Stock ID',
+            'is_buying' => 'Is Buying',
             'qty_bought' => 'Qty Bought',
             'unit_cost' => 'Unit Cost',
         ];

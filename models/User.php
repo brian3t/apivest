@@ -39,16 +39,11 @@ class User extends \app\models\base\User
         foreach ($txn as $t) {
             if (!isset($stocks[$t->stock_id])) {
                 $stocks[$t->stock_id] = ['stock' => $t->stock];
-                $stocks[$t->stock_id]['qty'] = 0;
             }
-            $stocks[$t->stock_id]['qty'] += $t->qty_bought;
-            $sum_qty += $t->qty_bought;
-            $sum_value += $t->qty_bought * $t->stock->last_sale;
             //todob calculate money left here
         }
         $p['stocks'] = $stocks;
         $p['money_left'] = 250;
-        $p['sum_qty'] = $sum_qty;
         $p['sum_value'] = $sum_value;
         return $p;
     }
@@ -62,9 +57,8 @@ class User extends \app\models\base\User
                                             <th>#</th>
                                             <th>Stock</th>
                                             <th>Company</th>
-                                            <th>Quantity Owned</th>
-                                            <th>Unit Value</th>
-                                            <th>Total Value</th>
+                                            <th>Value</th>
+                                            <th>Changed since last traded</th>
                                         </tr>';
         $index = 0;
         foreach ($portfolio['stocks'] as $stock_id => $stock) {
@@ -73,9 +67,8 @@ class User extends \app\models\base\User
             $html .= '<td>' . $index . '</td>';
             $html .= '<td>' . ($stock['stock'])->symbol . '</td>';
             $html .= '<td>' . ($stock['stock'])->name . '</td>';
-            $html .= '<td>' . $stock['qty'] . '</td>';
             $html .= '<td>$' . money_format('%6.4n', ($stock['stock'])->last_sale) . '</td>';
-            $html .= '<td>$' . money_format('%6.4n', $stock['qty'] * ($stock['stock'])->last_sale) . '</td>';
+            $html .= '<td>0</td>';
             $html .= '</tr>';
         }
         //summary
@@ -83,14 +76,13 @@ class User extends \app\models\base\User
         $html .= '<td>' . $index . '</td>';
         $html .= '<td>Total</td>';
         $html .= '<td></td>';
-        $html .= '<td>' . $portfolio['sum_qty'] . '</td>';
         $html .= '<td></td>';
-        $html .= '<td>$' . money_format('%6.4n', $portfolio['sum_value']) . '</td>';
+        $html .= '<td>0</td>';
         $html .= '</tr>';
 
 
         $html .= '</tbody></table>';
-        $html .= "You have $" . money_format('%4.2n', $portfolio['money_left']) . " left";
+        $html .= "You can add another {x} stocks to your portfolio";
         $html .= '</div>';
         return $html;
     }
