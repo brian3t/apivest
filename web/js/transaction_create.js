@@ -20,13 +20,16 @@ document.addEventListener("DOMContentLoaded", function () {
                             if (_.isObject(result) && result.hasOwnProperty('query') && result.query.hasOwnProperty("results") && result.query.results.hasOwnProperty("quote") && result.query.results.quote.hasOwnProperty("symbol")) {
                                 var quote_detail = result.query.results.quote;
                                 if (quote_detail.symbol !== symbol) {
-                                    last_sale = last_sale_api;
-                                    return false;
+                                    $unit_cost.val(last_sale_api);
+                                    $('#note').html('Note: stock value is pulled from NASDAQ');
+                                } else {
+                                    $unit_cost.val(parseFloat(quote_detail.Ask));
+                                    $('#note').html('Note: stock value is pulled from Yahoo Finance');
                                 }
-last_sale = quote_detail;
                             }
                         });
                 }
             });
     });
-});
+})
+;

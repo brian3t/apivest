@@ -56,7 +56,8 @@ class Transaction extends \yii\db\ActiveRecord
             'stock_id' => 'Stock ID',
             'is_buying' => 'Is Buying',
             'qty_bought' => 'Qty Bought',
-            'unit_cost' => 'Unit Cost',
+            'unit_cost' => 'Value',
+            'created_at' => 'Date',
         ];
     }
     

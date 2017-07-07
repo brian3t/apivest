@@ -15,6 +15,9 @@ use yii\widgets\ActiveForm;
         'isNewRecord' => ($model->isNewRecord) ? 1 : 0
     ]
 ]);
+if ($model->is_buying == null) {
+    $model->is_buying = true;
+}
 ?>
 
 <div class="transaction-form">
@@ -24,6 +27,7 @@ use yii\widgets\ActiveForm;
     <?= $form->errorSummary($model); ?>
 
     <?= $form->field($model, 'id', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>
+    <?= $form->field($model, 'is_buying')->checkbox(['value' => true]); ?>
 
     <?= $form->field($model, 'user_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\app\models\User::find()->orderBy('id')->asArray()->all(), 'id', 'username'),
@@ -34,20 +38,20 @@ use yii\widgets\ActiveForm;
     ]); ?>
 
     <?= $form->field($model, 'stock_id')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\app\models\Stock::find()->orderBy('id')->asArray()->all(), 'id', function($v){
-            return $v['name']. ' - '. $v['symbol'];
+        'data' => \yii\helpers\ArrayHelper::map(\app\models\Stock::find()->orderBy('id')->asArray()->all(), 'id', function ($v) {
+            return $v['name'] . ' - ' . $v['symbol'];
         }),
         'options' => ['placeholder' => 'Choose Stock', 'id' => 'stock_id'],
         'pluginOptions' => [
             'allowClear' => true
         ],
     ]); ?>
-    <div class="col-xs-12" >
+    <div class="col-xs-12">
         <a href="" id="link" target="_blank" style="display: none">Click here for stock information</a>
     </div>
 
     <?= $form->field($model, 'unit_cost')->textInput(['maxlength' => true, 'placeholder' => 'Unit Cost', 'readonly' => false, 'id' => 'unit_cost']) ?>
-
+    <p class="col-xs-12" id="note"></p>
     <div class="form-group">
         <?php if (Yii::$app->controller->action->id != 'save-as-new'): ?>
             <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

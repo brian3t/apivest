@@ -80,26 +80,68 @@ $this->registerJs($search);
                         ],
                         'filterInputOptions' => ['placeholder' => 'Stock', 'id' => 'grid--stock_id']
                     ],
+                    'created_at',
+                    ['label' => 'Bought For',
+                        'value' => function ($model) {
+                            return ($model->is_buying ? $model->unit_cost : '-');
+                        }],
+                    ['label' => 'Sold For',
+                        'value' => function ($model) {
+                            return ($model->is_buying ? '-' : $model->unit_cost);
+                        }],
                     ['label' => 'Initially Bought For',
                         'value' => function ($model) {
-                            return 0;//todob here find value when stock was initially bought. If this transaction is_buying, skip this
+                            /** @var \app\models\Transaction $model */
+                            if ($model->is_buying) {
+                                return '-';
+                            }
+                            return $model->last_txn_same_stock ? $model->last_txn_same_stock->unit_cost : '-';
                         }],
                     ['attribute' => 'profit',
-                        'label' => 'Value Gained/Lost',
+                        'label' => 'Value Gained',
                         'value' => function ($model) {
-                            return -1;//todob here calculate difference of value when sold and value when initially bought
+                            if ($model->is_buying) {
+                                return '-';
+                            }
+                            if (!$model->last_txn_same_stock) {
+                                return '-';
+                            }
+                            $gain = $model->unit_cost - $model->last_txn_same_stock->unit_cost;
+                            if ($model->last_txn_same_stock->unit_cost == 0) {
+                                $percent = '-';
+                            } else {
+                                $percent = round($gain / $model->last_txn_same_stock->unit_cost * 100, 2);
+                            }
+                            return $gain . " ($percent%) | " . round($percent) . " points";//calculate difference of value when sold and value when initially bought
                         }],
                     [
                         'class' => 'yii\grid\ActionColumn',
                         'template' => '{save-as-new} {view} {update} {delete}',
                         'buttons' => [
                             'save-as-new' => function ($url) {
-                                return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, ['title' => 'Save As New']);
+                                return Html::a('<span class="glyphicon glyphicon - copy"></span>', $url, ['title' => 'Save As New']);
                             },
                         ],
                     ],
-                    ['label' => 'Description', 'value' => function ($model) {
-                        return 'Here is what you did';//todob explain here what happened
+                    ['label' => 'Description', 'format' => 'html', 'value' => function ($model) {
+                        if ($model->is_buying) {
+                            return 'You bought this stock for ' . $model->unit_cost;
+                        }
+                        $last_txn = $model->last_txn_same_stock;
+                        if (!$last_txn) {
+                            return "You sold this stock for $" . $model->unit_cost;
+                        }
+                        $gain = $model->unit_cost - $last_txn->unit_cost;
+                        $percent = round($gain / $model->last_txn_same_stock->unit_cost * 100, 2);
+                        $res = "You sold this stock for $" . $model->unit_cost . "<br/> On " . $last_txn->created_at . " you bought it for $" . $last_txn->unit_cost . "<br/>";
+                        if ($gain > 0) {
+                            $res .= "You gained $$gain dollar, or $percent% money value for doing so <br/>" . round($percent) . " points earned";
+                        } else {
+                            $gain = 0 - $gain;
+                            $percent = 0 - $percent;
+                            $res .= "You lost $$gain dollar, or $percent% money value for doing so <br/>" . round($percent) . " points lost";
+                        }
+                        return $res;
                     }]
                 ];
                 ?>
@@ -110,7 +152,7 @@ $this->registerJs($search);
                     'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-transaction']],
                     'panel' => [
                         'type' => GridView::TYPE_PRIMARY,
-                        'heading' => '<span class="glyphicon glyphicon-book"></span>  ' . Html::encode($this->title),
+                        'heading' => '<span class="glyphicon glyphicon - book"></span>  ' . Html::encode($this->title),
                     ],
                     'export' => false,
                     // your toolbar can include the additional full export menu
@@ -125,7 +167,7 @@ $this->registerJs($search);
                                 'label' => 'Full',
                                 'class' => 'btn btn-default',
                                 'itemsBefore' => [
-                                    '<li class="dropdown-header">Export All Data</li>',
+                                    '<li class="dropdown - header">Export All Data</li>',
                                 ],
                             ],
                             'exportConfig' => [

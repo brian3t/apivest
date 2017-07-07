@@ -10,5 +10,9 @@ use \app\models\base\Transaction as BaseTransaction;
  */
 class Transaction extends BaseTransaction
 {
-
+    public function getLast_txn_same_stock()
+    {
+        if ($this->is_buying) return false;
+        return \app\models\Transaction::findOne(['stock_id' => $this->stock_id, 'user_id' => $this->user_id, 'is_buying'=>true]);
+    }
 }
