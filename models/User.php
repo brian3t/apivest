@@ -57,8 +57,8 @@ class User extends \app\models\base\User
                                             <th>#</th>
                                             <th>Stock</th>
                                             <th>Company</th>
-                                            <th>Value</th>
-                                            <th>Changed since last traded</th>
+                                            <th>Real-time Value</th>
+                                            <th>Change since last traded</th>
                                         </tr>';
         $index = 0;
         foreach ($portfolio['stocks'] as $stock_id => $stock) {
@@ -67,7 +67,7 @@ class User extends \app\models\base\User
             $html .= '<td>' . $index . '</td>';
             $html .= '<td>' . ($stock['stock'])->symbol . '</td>';
             $html .= '<td>' . ($stock['stock'])->name . '</td>';
-            $html .= '<td>$' . money_format('%6.4n', ($stock['stock'])->last_sale) . '</td>';
+            $html .= '<td>$' . money_format('%6.4n', ($stock['stock'])->real_time_value) . '</td>';
             $html .= '<td>0</td>';
             $html .= '</tr>';
         }
