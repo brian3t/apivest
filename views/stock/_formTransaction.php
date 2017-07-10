@@ -32,6 +32,7 @@ echo TabularForm::widget([
             ],
             'columnOptions' => ['width' => '200px']
         ],
+        'is_buying' => ['type' => TabularForm::INPUT_TEXT],
         'qty_bought' => ['type' => TabularForm::INPUT_TEXT],
         'unit_cost' => ['type' => TabularForm::INPUT_TEXT],
         'del' => [

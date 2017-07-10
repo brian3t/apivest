@@ -22,6 +22,7 @@ use Yii;
  * @property string $country
  * @property string $created_at
  * @property string $updated_at
+ * @property string $full_info
  *
  * @property \app\models\Transaction[] $transactions
  */
@@ -35,19 +36,20 @@ class Stock extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['symbol','name'],'required'],
-            [['last_sale','market_cap'],'number'],
-            [['ipo_year'],'integer'],
-            [['created_at','updated_at'],'safe'],
-            [['symbol'],'string','max' => 12],
-            [['name','industry'],'string','max' => 80],
-            [['last_sale_text'],'string','max' => 30],
-            [['ipo_year_text'],'string','max' => 20],
-            [['sector'],'string','max' => 100],
-            [['summary_quote'],'string','max' => 255],
-            [['exchange'],'string','max' => 15],
-            [['country'],'string','max' => 2],
-            [['symbol'],'unique']
+            [['symbol', 'name'], 'required'],
+            [['last_sale', 'market_cap'], 'number'],
+            [['ipo_year'], 'integer'],
+            [['created_at', 'updated_at'], 'safe'],
+            [['symbol'], 'string', 'max' => 12],
+            [['name', 'industry'], 'string', 'max' => 80],
+            [['last_sale_text'], 'string', 'max' => 30],
+            [['ipo_year_text'], 'string', 'max' => 20],
+            [['sector'], 'string', 'max' => 100],
+            [['summary_quote'], 'string', 'max' => 255],
+            [['exchange'], 'string', 'max' => 15],
+            [['country'], 'string', 'max' => 2],
+            [['full_info'], 'string', 'max' => 3000],
+            [['symbol'], 'unique']
         ];
     }
 
@@ -78,6 +80,7 @@ class Stock extends \yii\db\ActiveRecord
             'summary_quote' => 'Summary Quote',
             'exchange' => 'Exchange',
             'country' => 'Country',
+            'full_info' => 'Full Info',
         ];
     }
 
@@ -86,7 +89,7 @@ class Stock extends \yii\db\ActiveRecord
      */
     public function getTransactions()
     {
-        return $this->hasMany(\app\models\Transaction::className(),['stock_id' => 'id'])->inverseOf('stock');
+        return $this->hasMany(\app\models\Transaction::className(), ['stock_id' => 'id'])->inverseOf('stock');
     }
 
 }

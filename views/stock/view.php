@@ -47,6 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'summary_quote',
         'exchange',
         'country',
+        'full_info',
     ];
     echo DetailView::widget([
         'model' => $model,
@@ -65,7 +66,8 @@ if($providerTransaction->totalCount){
                 'attribute' => 'user.username',
                 'label' => 'User'
             ],
-                        'qty_bought',
+                        'is_buying',
+            'qty_bought',
             'unit_cost',
     ];
     echo Gridview::widget([
