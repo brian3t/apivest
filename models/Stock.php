@@ -53,7 +53,7 @@ class Stock extends BaseStock
         curl_close($ch);
 
         try {
-            $res_array = json_decode($res);
+            $res_array = json_decode($res, JSON_OBJECT_AS_ARRAY);
         } catch (\Exception $e) {
             Yii::info("YQL failed: " . $e->getMessage());
             return $this->last_sale;
