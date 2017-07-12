@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'VestChalleng Admin';
+$this->title = 'VestChallenge Admin';
 $user = Yii::$app->user->identity;
 /** @var \app\models\User $user */
 

@@ -85,30 +85,4 @@ if($providerTransaction->totalCount){
 ?>
     </div>
     
-    <div class="row">
-<?php
-if($providerUserStockNa->totalCount){
-    $gridColumnUserStockNa = [
-        ['class' => 'yii\grid\SerialColumn'],
-            ['attribute' => 'id', 'visible' => false],
-            [
-                'attribute' => 'user.username',
-                'label' => 'User'
-            ],
-                        'qty',
-    ];
-    echo Gridview::widget([
-        'dataProvider' => $providerUserStockNa,
-        'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user-stock-na']],
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode('User Stock Na'),
-        ],
-        'export' => false,
-        'columns' => $gridColumnUserStockNa
-    ]);
-}
-?>
-    </div>
 </div>

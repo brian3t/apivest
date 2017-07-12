@@ -38,12 +38,10 @@ class User extends \app\models\base\User
         $txn = Transaction::findAll(['user_id' => $this->id]);
         foreach ($txn as $t) {
             if (!isset($stocks[$t->stock_id])) {
-                $stocks[$t->stock_id] = ['stock' => $t->stock];
+                $stocks[$t->stock_id] = ['stock' => $t->stock, 'change_since_last_traded'=>$t->change_since_last_traded];
             }
-            //todob calculate money left here
         }
         $p['stocks'] = $stocks;
-        $p['money_left'] = 250;
         $p['sum_value'] = $sum_value;
         return $p;
     }
@@ -68,7 +66,7 @@ class User extends \app\models\base\User
             $html .= '<td>' . ($stock['stock'])->symbol . '</td>';
             $html .= '<td>' . ($stock['stock'])->name . '</td>';
             $html .= '<td>$' . money_format('%6.4n', ($stock['stock'])->real_time_value) . '</td>';
-            $html .= '<td>0</td>';
+            $html .= '<td>'. $stock['change_since_last_traded'] . '</td>';
             $html .= '</tr>';
         }
         //summary

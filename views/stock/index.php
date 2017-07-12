@@ -27,7 +27,7 @@ $this->registerJs($search);
             'symbol',
             'name',
             'last_sale',
-            'last_sale_text',
+            'updated_at',
             'market_cap',
             'ipo_year_text',
             'ipo_year',
