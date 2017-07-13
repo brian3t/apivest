@@ -29,6 +29,7 @@
       <sourceFolder url="file://$MODULE_DIR$/vendor/codeception/base/tests/unit/Codeception" isTestSource="false" packagePrefix="Project" />
       <sourceFolder url="file://$MODULE_DIR$/vendor/myclabs/deep-copy/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/web" type="java-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/tmp/adminlte" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/behat/gherkin" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/bootstrap" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/jquery" />

@@ -80,7 +80,7 @@ class User extends \app\models\base\User
 
 
         $html .= '</tbody></table>';
-        $html .= "You can add another {x} stocks to your portfolio";
+        $html .= "You can buy another ". (10 - count($portfolio['stocks'])) ." stocks to your portfolio. Each person can own at most 10 stocks at a time.";
         $html .= '</div>';
         return $html;
     }

@@ -46,7 +46,7 @@ class TransactionController extends Controller
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Transaction::find(),
+            'query' => Transaction::find()->where(['user_id'=>Yii::$app->user->identity->id])->orderBy(['created_at'=>SORT_DESC]),
         ]);
 
         return $this->render('index', [
