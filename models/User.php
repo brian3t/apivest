@@ -6,7 +6,7 @@ namespace app\models;
  * Class User
  * @package app\models
  *
- * @property array $portfolio
+ * @property Portfolio $portfolio
  */
 class User extends \app\models\base\User
 {
@@ -32,18 +32,10 @@ class User extends \app\models\base\User
         return $rules;
     }
 
-    public function getPortfolio()
+    public function __construct(array $config = [])
     {
-        $p = ['stocks' => $stocks = [], 'money_left' => $this::INITIAL_MONEY, 'sum_qty' => $sum_qty = 0, 'sum_value' => $sum_value = 0];
-        $txn = Transaction::findAll(['user_id' => $this->id]);
-        foreach ($txn as $t) {
-            if (!isset($stocks[$t->stock_id])) {
-                $stocks[$t->stock_id] = ['stock' => $t->stock, 'change_since_last_traded'=>$t->change_since_last_traded];
-            }
-        }
-        $p['stocks'] = $stocks;
-        $p['sum_value'] = $sum_value;
-        return $p;
+        parent::__construct($config);
+        $this->portfolio = new Portfolio($this->id);
     }
 
     public function portfolio_html($mode = 'short')
@@ -59,7 +51,7 @@ class User extends \app\models\base\User
                                             <th>Change since last traded</th>
                                         </tr>';
         $index = 0;
-        foreach ($portfolio['stocks'] as $stock_id => $stock) {
+        foreach ($portfolio->stocks as $stock) {
             $index++;
             $html .= '<tr>';
             $html .= '<td>' . $index . '</td>';
@@ -83,5 +75,10 @@ class User extends \app\models\base\User
         $html .= "You can buy another ". (10 - count($portfolio['stocks'])) ." stocks to your portfolio. Each person can own at most 10 stocks at a time.";
         $html .= '</div>';
         return $html;
+    }
+
+    public function getIs_admin()
+    {
+        return true;
     }
 }

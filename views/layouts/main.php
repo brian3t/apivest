@@ -137,10 +137,17 @@ AppAsset::register($this);
                     </a>
                 </li>
                 <li>
-                    <a href="/transaction">
+                    <a href="/transaction/indexown">
                         <i class="fa fa-handshake-o"></i> <span>Buy/Sell Stock</span>
                     </a>
                 </li>
+                <?php if (Yii::$app->user->identity->is_admin):?>
+                <li>
+                    <a href="/transaction/index">
+                        <i class="fa fa-handshake-o"></i> <span>All transactions</span>
+                    </a>
+                </li>
+                <?php endif; ?>
             </ul>
         </section>
         <!-- /.sidebar -->

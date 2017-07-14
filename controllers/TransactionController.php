@@ -28,7 +28,7 @@ class TransactionController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'save-as-new', 'add-point-history'],
+                        'actions' => ['index','indexown', 'view', 'create', 'update', 'delete', 'save-as-new', 'add-point-history'],
                         'roles' => ['@']
                     ],
                     [
@@ -46,13 +46,29 @@ class TransactionController extends Controller
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Transaction::find()->where(['user_id'=>Yii::$app->user->identity->id])->orderBy(['created_at'=>SORT_DESC]),
+            'query' => Transaction::find()->orderBy(['created_at'=>SORT_DESC]),
         ]);
 
         return $this->render('index', [
             'dataProvider' => $dataProvider,
         ]);
     }
+
+    /**
+     * Lists all Transaction models.
+     * @return mixed
+     */
+    public function actionIndexown()
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => Transaction::find()->where(['user_id'=>Yii::$app->user->identity->id])->orderBy(['created_at'=>SORT_DESC]),
+        ]);
+$totalpoint = Yii::$app->user->identity->portfolio->totalpoints;
+        return $this->render('index', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
 
     /**
      * Displays a single Transaction model.
