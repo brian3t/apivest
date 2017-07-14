@@ -63,7 +63,7 @@ class TransactionController extends Controller
         $dataProvider = new ActiveDataProvider([
             'query' => Transaction::find()->where(['user_id'=>Yii::$app->user->identity->id])->orderBy(['created_at'=>SORT_DESC]),
         ]);
-$totalpoint = Yii::$app->user->identity->portfolio->totalpoints;
+$totalpoint = Yii::$app->user->identity->portfolio->total_points;
         return $this->render('index', [
             'dataProvider' => $dataProvider,
         ]);

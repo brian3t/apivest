@@ -78,7 +78,7 @@ AppAsset::register($this);
 <header class="header">
     <a href="index.html" class="logo">
         <!-- Add the class icon to your logo image or logo icon to add the margining -->
-        AdminLTE
+        VestChallenge Admin
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
@@ -138,10 +138,10 @@ AppAsset::register($this);
                 </li>
                 <li>
                     <a href="/transaction/indexown">
-                        <i class="fa fa-handshake-o"></i> <span>Buy/Sell Stock</span>
+                        <i class="fa fa-handshake-o"></i> <span>Buy/Sell Stocks</span>
                     </a>
                 </li>
-                <?php if (Yii::$app->user->identity->is_admin):?>
+                <?php if (!Yii::$app->user->isGuest && Yii::$app->user->identity->is_admin):?>
                 <li>
                     <a href="/transaction/index">
                         <i class="fa fa-handshake-o"></i> <span>All transactions</span>

@@ -8,7 +8,8 @@ use \app\models\base\Stock as BaseStock;
 /**
  * This is the model class for table "stock".
  *
- * @property int $real_time_value
+ * @property double $real_time_value
+ * @property double $change_since_last_traded
  */
 class Stock extends BaseStock
 {
@@ -38,7 +39,7 @@ class Stock extends BaseStock
     public function getReal_time_value()
     {
         $time_since_last_updated = date_diff(new \DateTime($this->updated_at), new \DateTime());
-        if ($time_since_last_updated->d == 0 && $time_since_last_updated->h == 0 && $time_since_last_updated->m < 15) {
+        if (!empty($this->last_sale) && $time_since_last_updated->d == 0 && $time_since_last_updated->h == 0 && $time_since_last_updated->m < 15) {
             return $this->last_sale;
         }
         $ch = curl_init();
@@ -61,6 +62,9 @@ class Stock extends BaseStock
         if (isset($res_array['query'])&& isset($res_array['query']['results'])&& isset($res_array['query']['results']['quote'])&& isset($res_array['query']['results']['quote']['symbol'])){
             $this->full_info = json_encode($res_array['query']['results']['quote']);
             $this->last_sale = $res_array['query']['results']['quote']['Ask'];
+            if (empty($this->last_sale)){
+                $this->last_sale = floatval($res_array['query']['results']['quote']['PreviousClose']);
+            }
             $this->save();
         }
         return $this->last_sale;

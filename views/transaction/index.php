@@ -6,6 +6,8 @@
 use yii\helpers\Html;
 use kartik\export\ExportMenu;
 use kartik\grid\GridView;
+use kartik\select2\Select2;
+use yii\helpers\ArrayHelper;
 
 $this->title = 'Transaction';
 $this->params['breadcrumbs'][] = $this->title;
@@ -14,11 +16,23 @@ $search = "$('.search-button').click(function(){
 	return false;
 });";
 $this->registerJs($search);
+
+$user_ddl = ArrayHelper::map(\app\models\User::find()->select('id, username')->asArray()->all(),'id','username');
 ?>
 
 <section class="content-header"><h3>Transaction</h3>
     <p>
         <?= Html::a('Buy/Sell Stock', ['create'], ['class' => 'btn btn-success']) ?>
+        <?php
+        echo Select2::widget([
+            'name' => 'user_id',
+            'data' => $user_ddl,
+            'options' => ['placeholder' => 'Select user'],
+            'pluginOptions' => [
+                'allowClear' => true
+            ],
+        ]);
+        ?>
     </p></section>
 <section class="content">
     <div class="row">
@@ -58,7 +72,7 @@ $this->registerJs($search);
                         'attribute' => 'stock_id',
                         'label' => 'Stock',
                         'value' => function ($model) {
-                            return $model->stock->name;
+                            return $model->stock->symbol . ' - ' . $model->stock->name;
                         },
                         'filterType' => GridView::FILTER_SELECT2,
                         'filter' => \yii\helpers\ArrayHelper::map(\app\models\Stock::find()->asArray()->all(), 'id', 'name'),
@@ -100,18 +114,15 @@ $this->registerJs($search);
                     ['attribute' => 'profit',
                         'label' => 'Value Gained',
                         'value' => function ($model) {
+                            /** @var \app\models\Transaction $model */
                             if ($model->is_buying) {
                                 return '-';
                             }
                             if (!$model->last_txn_same_stock) {
                                 return '-';
                             }
-                            $gain = $model->unit_cost - $model->last_txn_same_stock->unit_cost;
-                            if ($model->last_txn_same_stock->unit_cost == 0) {
-                                $percent = '-';
-                            } else {
-                                $percent = round($gain / $model->last_txn_same_stock->unit_cost * 100, 2);
-                            }
+                            $gain = $model->gain;
+                            $percent = $model->points_gained;
                             return $gain . " ($percent%) | " . round($percent) . " points";//calculate difference of value when sold and value when initially bought
                         }],
                     [

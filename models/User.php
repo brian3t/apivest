@@ -6,11 +6,11 @@ namespace app\models;
  * Class User
  * @package app\models
  *
- * @property Portfolio $portfolio
  */
 class User extends \app\models\base\User
 {
     const INITIAL_MONEY = 1000;
+    protected $portfolio;
 
     public function scenarios()
     {
@@ -32,48 +32,53 @@ class User extends \app\models\base\User
         return $rules;
     }
 
-    public function __construct(array $config = [])
+    public function getPortfolio()
     {
-        parent::__construct($config);
         $this->portfolio = new Portfolio($this->id);
+        return $this->portfolio;
     }
 
     public function portfolio_html($mode = 'short')
     {
-        $portfolio = $this->portfolio;
+        $portfolio = $this->getPortfolio();
         $html = '<div class="table-responsive no-padding">
 <table class="table table-hover"><tbody>
 <tr>
                                             <th>#</th>
                                             <th>Stock</th>
                                             <th>Company</th>
+                                            <th>Value When Bought</th>
                                             <th>Real-time Value</th>
-                                            <th>Change since last traded</th>
+                                            <th>Change since last traded (Estimated profit)</th>
                                         </tr>';
         $index = 0;
-        foreach ($portfolio->stocks as $stock) {
+        foreach ($portfolio->stocks as $stock_id => $stock_detail) {
             $index++;
+            $txn = $stock_detail['transaction'];
+            /** @var Transaction $txn */
             $html .= '<tr>';
             $html .= '<td>' . $index . '</td>';
-            $html .= '<td>' . ($stock['stock'])->symbol . '</td>';
-            $html .= '<td>' . ($stock['stock'])->name . '</td>';
-            $html .= '<td>$' . money_format('%6.4n', ($stock['stock'])->real_time_value) . '</td>';
-            $html .= '<td>'. $stock['change_since_last_traded'] . '</td>';
+            $html .= '<td>' . $txn->stock->symbol . '</td>';
+            $html .= '<td>' . $txn->stock->name . '</td>';
+            $html .= '<td>$' . money_format('%6.4n', ($txn->unit_cost)) . '</td>';
+            $html .= '<td>$' . money_format('%6.4n', $txn->stock->real_time_value) . '</td>';
+            $html .= '<td>' . $txn->getChange_since_last_traded() . '</td>';
             $html .= '</tr>';
         }
         //summary
         $html .= '<tr class="text-blue">';
-        $html .= '<td>' . $index . '</td>';
-        $html .= '<td>Total</td>';
+        $html .= '<td>Average</td>';
         $html .= '<td></td>';
         $html .= '<td></td>';
-        $html .= '<td>0</td>';
+        $html .= '<td>$'. $portfolio->average_unit_cost .'</td>';
+        $html .= '<td>$'. $portfolio->average_real_time_value .'</td>';
+        $html .= '<td>' . $portfolio->average_change_since_last_traded . '</td>';
         $html .= '</tr>';
 
 
         $html .= '</tbody></table>';
-        $html .= "You can buy another ". (10 - count($portfolio['stocks'])) ." stocks to your portfolio. Each person can own at most 10 stocks at a time.";
-        $html .= '</div>';
+        $html .= "You can buy another " . (10 - count($portfolio->stocks)) . " stocks to your portfolio. Each person can own at most 10 stocks at a time.";
+        $html .= "<br/>You have <b>" . $portfolio->total_points . "</b> points. Click on Buy/Sell Stocks for point history";
         return $html;
     }
 
