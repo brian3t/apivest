@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Transaction;
-use yii\data\ActiveDataProvider;
+use app\models\TransactionSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -45,11 +45,10 @@ class TransactionController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Transaction::find()->orderBy(['created_at'=>SORT_DESC]),
-        ]);
-
+        $searchModel = new TransactionSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -60,11 +59,10 @@ class TransactionController extends Controller
      */
     public function actionIndexown()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Transaction::find()->where(['user_id'=>Yii::$app->user->identity->id])->orderBy(['created_at'=>SORT_DESC]),
-        ]);
-$totalpoint = Yii::$app->user->identity->portfolio->total_points;
+        $searchModel = new TransactionSearch();
+        $dataProvider = $searchModel->search(array_merge(Yii::$app->request->queryParams,['user_id' => Yii::$app->user->identity->getId()]));
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
