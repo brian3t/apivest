@@ -16,9 +16,9 @@ class User extends \app\models\base\User
     {
         $scenarios = parent::scenarios();
         // add field to scenarios
-        $scenarios['create'][] = 'field';
-        $scenarios['update'][] = 'field';
-        $scenarios['register'][] = 'field';
+//        $scenarios['create'][] = 'field';
+//        $scenarios['update'][] = 'field';
+//        $scenarios['register'][] = 'field';
         return $scenarios;
     }
 

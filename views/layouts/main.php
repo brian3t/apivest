@@ -93,9 +93,19 @@ AppAsset::register($this);
             <ul class="nav navbar-nav">
                 <!-- Messages: style can be found in dropdown.less-->
                 <form id="logout" action="/user/security/logout" method="post"><input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" /></form>
+                <?php if (!Yii::$app->user->isGuest): ?>
+
                 <li class="logout">
                     <a href="#" id="logout_a" onclick="$('#logout').submit()">Log Out</a>
                 </li>
+                <?php else: ?>
+                    <li>
+                        <a href="/user/security/login" >Log In</a>
+                    </li>
+                    <li>
+                        <a href="/user/registration/register" >Sign Up</a>
+                    </li>
+                <?php endif; ?>
             </ul>
         </div>
     </nav>
