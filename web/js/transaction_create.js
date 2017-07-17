@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     $unit_cost.val(last_sale_api);
                                     $('#note').html('Note: stock value is pulled from NASDAQ');
                                 } else {
-                                    $unit_cost.val(parseFloat(quote_detail.Ask));
+                                    $unit_cost.val(parseFloat(quote_detail.LastTradePriceOnly));//don't use ASK anymore
                                     $('#note').html('Note: stock value is pulled from Yahoo Finance');
                                 }
                             }

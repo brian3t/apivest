@@ -1,6 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $searchModel app\models\TransactionSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 use yii\helpers\Html;
@@ -12,7 +13,7 @@ use yii\helpers\ArrayHelper;
 $this->title = 'Transaction';
 $this->params['breadcrumbs'][] = $this->title;
 $search = "$('.search-button').click(function(){
-	$('.search-form').toggle(1000);
+	$('.search-form').toggle();
 	return false;
 });";
 $this->registerJs($search);
@@ -22,16 +23,24 @@ $user_ddl = ArrayHelper::map(\app\models\User::find()->select('id, username')->a
 
 <section class="content-header"><h3>Transaction</h3>
     <p>
+        <?= Html::a('Advanced Search', '#', ['class' => 'btn btn-info search-button']) ?>
+    </p>
+    <div class="search-form container-fluid" style="display:block">
+        <div class="col-sm-6 col-xs-12">
+        <?= $this->render('_search', ['model' => $searchModel]); ?>
+        </div>
+    </div>
+
         <?= Html::a('Buy/Sell Stock', ['create'], ['class' => 'btn btn-success']) ?>
         <?php
-        echo Select2::widget([
+        /*echo Select2::widget([
             'name' => 'user_id',
             'data' => $user_ddl,
             'options' => ['placeholder' => 'Select user'],
             'pluginOptions' => [
                 'allowClear' => true
             ],
-        ]);
+        ]);*/
         ?>
     </p></section>
 <section class="content">
@@ -168,7 +177,7 @@ $user_ddl = ArrayHelper::map(\app\models\User::find()->select('id, username')->a
                     'export' => false,
                     // your toolbar can include the additional full export menu
                     'toolbar' => [
-                        '{export}',
+                        /*'{export}',
                         ExportMenu::widget([
                             'dataProvider' => $dataProvider,
                             'columns' => $gridColumn,
@@ -184,7 +193,7 @@ $user_ddl = ArrayHelper::map(\app\models\User::find()->select('id, username')->a
                             'exportConfig' => [
                                 ExportMenu::FORMAT_PDF => false
                             ]
-                        ]),
+                        ]),*/
                     ],
                 ]); ?>
             </div>
