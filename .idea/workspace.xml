@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="778512b5-d358-4f4f-a773-b66906b65f1a" name="Default" comment="Working on txn search. Fixing signup link.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/TransactionSearch.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/transaction/_search.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/apivest.iml" afterPath="$PROJECT_DIR$/.idea/apivest.iml" />
+    <list default="true" id="778512b5-d358-4f4f-a773-b66906b65f1a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/TransactionController.php" afterPath="$PROJECT_DIR$/controllers/TransactionController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/TransactionSearch.php" afterPath="$PROJECT_DIR$/models/TransactionSearch.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/User.php" afterPath="$PROJECT_DIR$/models/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layouts/main.php" afterPath="$PROJECT_DIR$/views/layouts/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/transaction/_search.php" afterPath="$PROJECT_DIR$/views/transaction/_search.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/transaction/index.php" afterPath="$PROJECT_DIR$/views/transaction/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/AdminLTE.css" afterPath="$PROJECT_DIR$/web/css/AdminLTE.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/transaction_create.js" afterPath="$PROJECT_DIR$/web/js/transaction_create.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -91,37 +94,37 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="transaction_create.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/transaction_create.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="19" column="231" lean-forward="false" selection-start-line="19" selection-start-column="231" selection-end-line="19" selection-end-column="231" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/User.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2002">
               <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
               <folding>
-                <marker date="1500094907363" expanded="true" signature="33:76" ph=" Class User ..." />
-                <marker date="1500094907363" expanded="true" signature="3009:3016" ph="{...}" />
+                <marker date="1500255161852" expanded="true" signature="33:76" ph=" Class User ..." />
+                <marker date="1500255161852" expanded="true" signature="3015:3022" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TransactionController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TransactionController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/TransactionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="49" column="39" lean-forward="true" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
+            <state relative-caret-position="1456">
+              <caret line="61" column="47" lean-forward="false" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="47" />
               <folding>
                 <element signature="e#35#43#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegistrationController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vendor/dektrium/yii2-user/controllers/RegistrationController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -142,7 +145,7 @@
             <state relative-caret-position="312">
               <caret line="16" column="6" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
               <folding>
-                <marker date="1500094907363" expanded="true" signature="2461:2702" ph="..." />
+                <marker date="1500253001000" expanded="true" signature="2461:2702" ph="..." />
               </folding>
             </state>
           </provider>
@@ -450,8 +453,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-1" />
     <option name="y" value="-1" />
-    <option name="width" value="2562" />
-    <option name="height" value="1423" />
+    <option name="width" value="1920" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="false" id="Update" />
@@ -471,6 +474,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -575,7 +580,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tmp" />
+              <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -589,33 +594,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tmp" />
+              <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="adminlte" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apivest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apivest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tmp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adminlte" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
+              <option name="myItemId" value="yii2-user" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -629,41 +612,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tmp" />
+              <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="adminlte" />
+              <option name="myItemId" value="yii2-user" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="forms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apivest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apivest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tmp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adminlte" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -744,8 +701,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -949,15 +904,22 @@
       <option name="project" value="LOCAL" />
       <updated>1499750463966</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Working on txn search. Fixing signup link.">
+      <created>1500252376092</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1500252376092</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-1" width="2562" height="1423" extended-state="0" />
+    <frame x="-1" y="-1" width="1920" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0875" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11666667" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1011,6 +973,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="Import stock db" />
     <MESSAGE value="Minor fix." />
     <MESSAGE value="Working on txn search. Fixing signup link." />
@@ -1018,19 +981,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="27" />
+      <option name="time" value="29" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/stock/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/TransactionController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1170">
@@ -1045,7 +1000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="19" column="231" lean-forward="false" selection-start-line="19" selection-start-column="231" selection-end-line="19" selection-end-column="231" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1054,8 +1008,8 @@
         <state relative-caret-position="2002">
           <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="33:76" ph=" Class User ..." />
-            <marker date="1500094907363" expanded="true" signature="3009:3016" ph="{...}" />
+            <marker date="1500255161852" expanded="true" signature="33:76" ph=" Class User ..." />
+            <marker date="1500255161852" expanded="true" signature="3015:3022" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1073,7 +1027,7 @@
         <state relative-caret-position="312">
           <caret line="16" column="6" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="2461:2702" ph="..." />
+            <marker date="1500253001000" expanded="true" signature="2461:2702" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1138,7 +1092,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="19" column="231" lean-forward="false" selection-start-line="19" selection-start-column="231" selection-end-line="19" selection-end-column="231" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1147,8 +1100,8 @@
         <state relative-caret-position="2002">
           <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="33:76" ph=" Class User ..." />
-            <marker date="1500094907363" expanded="true" signature="3009:3016" ph="{...}" />
+            <marker date="1500255161852" expanded="true" signature="33:76" ph=" Class User ..." />
+            <marker date="1500255161852" expanded="true" signature="3015:3022" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1166,7 +1119,7 @@
         <state relative-caret-position="312">
           <caret line="16" column="6" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="2461:2702" ph="..." />
+            <marker date="1500253001000" expanded="true" signature="2461:2702" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1231,7 +1184,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="19" column="231" lean-forward="false" selection-start-line="19" selection-start-column="231" selection-end-line="19" selection-end-column="231" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1240,8 +1192,8 @@
         <state relative-caret-position="2002">
           <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="33:76" ph=" Class User ..." />
-            <marker date="1500094907363" expanded="true" signature="3009:3016" ph="{...}" />
+            <marker date="1500255161852" expanded="true" signature="33:76" ph=" Class User ..." />
+            <marker date="1500255161852" expanded="true" signature="3015:3022" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1259,7 +1211,7 @@
         <state relative-caret-position="312">
           <caret line="16" column="6" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="2461:2702" ph="..." />
+            <marker date="1500253001000" expanded="true" signature="2461:2702" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1324,7 +1276,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="19" column="231" lean-forward="false" selection-start-line="19" selection-start-column="231" selection-end-line="19" selection-end-column="231" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1333,8 +1284,8 @@
         <state relative-caret-position="2002">
           <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="33:76" ph=" Class User ..." />
-            <marker date="1500094907363" expanded="true" signature="3009:3016" ph="{...}" />
+            <marker date="1500255161852" expanded="true" signature="33:76" ph=" Class User ..." />
+            <marker date="1500255161852" expanded="true" signature="3015:3022" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1352,7 +1303,7 @@
         <state relative-caret-position="312">
           <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="2461:2702" ph="..." />
+            <marker date="1500253001000" expanded="true" signature="2461:2702" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1417,7 +1368,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="19" column="231" lean-forward="false" selection-start-line="19" selection-start-column="231" selection-end-line="19" selection-end-column="231" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1426,8 +1376,8 @@
         <state relative-caret-position="2080">
           <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="33:76" ph=" Class User ..." />
-            <marker date="1500094907363" expanded="true" signature="3009:3016" ph="{...}" />
+            <marker date="1500255161852" expanded="true" signature="33:76" ph=" Class User ..." />
+            <marker date="1500255161852" expanded="true" signature="3015:3022" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1493,7 +1443,7 @@
         <state relative-caret-position="416">
           <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="2461:2702" ph="..." />
+            <marker date="1500253001000" expanded="true" signature="2461:2702" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1502,7 +1452,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="19" column="231" lean-forward="false" selection-start-line="19" selection-start-column="231" selection-end-line="19" selection-end-column="231" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1511,8 +1460,8 @@
         <state relative-caret-position="2080">
           <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="33:76" ph=" Class User ..." />
-            <marker date="1500094907363" expanded="true" signature="3009:3016" ph="{...}" />
+            <marker date="1500255161852" expanded="true" signature="33:76" ph=" Class User ..." />
+            <marker date="1500255161852" expanded="true" signature="3015:3022" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1578,7 +1527,7 @@
         <state relative-caret-position="416">
           <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="2461:2702" ph="..." />
+            <marker date="1500253001000" expanded="true" signature="2461:2702" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1587,7 +1536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="19" column="231" lean-forward="false" selection-start-line="19" selection-start-column="231" selection-end-line="19" selection-end-column="231" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1596,8 +1544,8 @@
         <state relative-caret-position="2080">
           <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="33:76" ph=" Class User ..." />
-            <marker date="1500094907363" expanded="true" signature="3009:3016" ph="{...}" />
+            <marker date="1500255161852" expanded="true" signature="33:76" ph=" Class User ..." />
+            <marker date="1500255161852" expanded="true" signature="3015:3022" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1624,7 +1572,7 @@
         <state relative-caret-position="2418">
           <caret line="97" column="44" lean-forward="false" selection-start-line="97" selection-start-column="44" selection-end-line="97" selection-end-column="44" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="2461:2702" ph="..." />
+            <marker date="1500253001000" expanded="true" signature="2461:2702" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1679,7 +1627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="19" column="231" lean-forward="false" selection-start-line="19" selection-start-column="231" selection-end-line="19" selection-end-column="231" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1688,8 +1635,8 @@
         <state relative-caret-position="2080">
           <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="33:76" ph=" Class User ..." />
-            <marker date="1500094907363" expanded="true" signature="3009:3016" ph="{...}" />
+            <marker date="1500255161852" expanded="true" signature="33:76" ph=" Class User ..." />
+            <marker date="1500255161852" expanded="true" signature="3015:3022" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1738,7 +1685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="19" column="231" lean-forward="false" selection-start-line="19" selection-start-column="231" selection-end-line="19" selection-end-column="231" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1747,8 +1693,8 @@
         <state relative-caret-position="2080">
           <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="33:76" ph=" Class User ..." />
-            <marker date="1500094907363" expanded="true" signature="3009:3016" ph="{...}" />
+            <marker date="1500255161852" expanded="true" signature="33:76" ph=" Class User ..." />
+            <marker date="1500255161852" expanded="true" signature="3015:3022" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1797,7 +1743,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="19" column="231" lean-forward="false" selection-start-line="19" selection-start-column="231" selection-end-line="19" selection-end-column="231" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1836,8 +1781,8 @@
         <state relative-caret-position="1482">
           <caret line="57" column="50" lean-forward="false" selection-start-line="57" selection-start-column="50" selection-end-line="57" selection-end-column="50" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="33:76" ph=" Class User ..." />
-            <marker date="1500094907363" expanded="true" signature="3009:3016" ph="{...}" />
+            <marker date="1500255161852" expanded="true" signature="33:76" ph=" Class User ..." />
+            <marker date="1500255161852" expanded="true" signature="3015:3022" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2082,7 +2027,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="436">
           <caret line="85" column="50" lean-forward="false" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2112,7 +2056,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="19" column="231" lean-forward="false" selection-start-line="19" selection-start-column="231" selection-end-line="19" selection-end-column="231" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2151,8 +2094,8 @@
         <state relative-caret-position="1872">
           <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="33:76" ph=" Class User ..." />
-            <marker date="1500094907363" expanded="true" signature="3009:3016" ph="{...}" />
+            <marker date="1500255161852" expanded="true" signature="33:76" ph=" Class User ..." />
+            <marker date="1500255161852" expanded="true" signature="3015:3022" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2202,7 +2145,7 @@
         <state relative-caret-position="220">
           <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="2461:2702" ph="..." />
+            <marker date="1500253001000" expanded="true" signature="2461:2702" ph="..." />
           </folding>
         </state>
       </provider>
@@ -2212,8 +2155,8 @@
         <state relative-caret-position="1113">
           <caret line="53" column="39" lean-forward="false" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="33:76" ph=" Class User ..." />
-            <marker date="1500094907363" expanded="true" signature="3009:3016" ph="{...}" />
+            <marker date="1500255161852" expanded="true" signature="33:76" ph=" Class User ..." />
+            <marker date="1500255161852" expanded="true" signature="3015:3022" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2233,7 +2176,7 @@
         <state relative-caret-position="2751">
           <caret line="135" column="76" lean-forward="false" selection-start-line="135" selection-start-column="76" selection-end-line="135" selection-end-column="76" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="2461:2702" ph="..." />
+            <marker date="1500253001000" expanded="true" signature="2461:2702" ph="..." />
           </folding>
         </state>
       </provider>
@@ -2288,7 +2231,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2475,7 +2417,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="436">
           <caret line="85" column="50" lean-forward="false" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2498,7 +2439,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="19" column="231" lean-forward="false" selection-start-line="19" selection-start-column="231" selection-end-line="19" selection-end-column="231" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2542,7 +2482,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
           <caret line="72" column="38" lean-forward="false" selection-start-line="72" selection-start-column="38" selection-end-line="72" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2592,7 +2531,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="427">
           <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2611,8 +2549,8 @@
         <state relative-caret-position="2002">
           <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="33:76" ph=" Class User ..." />
-            <marker date="1500094907363" expanded="true" signature="3009:3016" ph="{...}" />
+            <marker date="1500255161852" expanded="true" signature="33:76" ph=" Class User ..." />
+            <marker date="1500255161852" expanded="true" signature="3015:3022" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2622,7 +2560,7 @@
         <state relative-caret-position="312">
           <caret line="16" column="6" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
           <folding>
-            <marker date="1500094907363" expanded="true" signature="2461:2702" ph="..." />
+            <marker date="1500253001000" expanded="true" signature="2461:2702" ph="..." />
           </folding>
         </state>
       </provider>
@@ -2631,7 +2569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2639,7 +2576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="56" column="39" lean-forward="true" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2653,11 +2589,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/TransactionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="49" column="39" lean-forward="true" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
+        <state relative-caret-position="1456">
+          <caret line="61" column="47" lean-forward="false" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="47" />
           <folding>
             <element signature="e#35#43#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dektrium/yii2-user/controllers/RegistrationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

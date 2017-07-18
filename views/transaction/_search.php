@@ -35,7 +35,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'is_buying')->textInput(['placeholder' => 'Is Buying']) ?>
 
-    <?= $form->field($model, 'qty_bought')->textInput(['placeholder' => 'Qty Bought']) ?>
+    <?php //echo $form->field($model, 'qty_bought')->textInput(['placeholder' => 'Qty Bought']) ?>
 
     <?php /* echo $form->field($model, 'unit_cost')->textInput(['maxlength' => true, 'placeholder' => 'Unit Cost']) */ ?>
 
