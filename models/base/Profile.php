@@ -16,12 +16,27 @@ use Yii;
  * @property string $website
  * @property string $bio
  * @property string $timezone
+ * @property string $city
+ * @property string $state
+ * @property integer $ai_point
  *
  * @property \app\models\User $user
  */
 class Profile extends \yii\db\ActiveRecord
 {
     use \mootensai\relation\RelationTrait;
+
+
+    /**
+    * This function helps \mootensai\relation\RelationTrait runs faster
+    * @return array relation names of this model
+    */
+    public function relationNames()
+    {
+        return [
+            'user'
+        ];
+    }
 
     /**
      * @inheritdoc
@@ -30,14 +45,15 @@ class Profile extends \yii\db\ActiveRecord
     {
         return [
             [['user_id'], 'required'],
-            [['user_id'], 'integer'],
+            [['user_id', 'ai_point'], 'integer'],
             [['bio'], 'string'],
             [['name', 'public_email', 'gravatar_email', 'location', 'website'], 'string', 'max' => 255],
             [['gravatar_id'], 'string', 'max' => 32],
-            [['timezone'], 'string', 'max' => 40]
+            [['timezone', 'state'], 'string', 'max' => 40],
+            [['city'], 'string', 'max' => 80]
         ];
     }
-    
+
     /**
      * @inheritdoc
      */
@@ -61,6 +77,9 @@ class Profile extends \yii\db\ActiveRecord
             'website' => 'Website',
             'bio' => 'Bio',
             'timezone' => 'Timezone',
+            'city' => 'City',
+            'state' => 'State',
+            'ai_point' => 'Ai Point',
         ];
     }
     
@@ -69,6 +88,6 @@ class Profile extends \yii\db\ActiveRecord
      */
     public function getUser()
     {
-        return $this->hasOne(\app\models\User::className(), ['id' => 'user_id'])->inverseOf('profile');
+        return $this->hasOne(\app\models\User::className(), ['id' => 'user_id']);
     }
     }

@@ -22,6 +22,18 @@ $config = [
         ],
         'db' => $db,
     ],
+    'modules' => [
+        'user' => [
+            'class' => 'dektrium\user\Module',
+            'modelMap' => [
+                'User' => 'app\models\User'
+            ]],
+        'datecontrol' => [
+            'class' => '\kartik\datecontrol\Module',
+            // see settings on http://demos.krajee.com/datecontrol#module
+        ],
+
+    ],
     'params' => $params,
     /*
     'controllerMap' => [

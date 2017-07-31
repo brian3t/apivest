@@ -21,6 +21,7 @@ use dektrium\user\models\User as BaseDektriumUser;
  * @property integer $updated_at
  * @property integer $flags
  * @property integer $last_login_at
+ * @property integer $is_ai
  *
  * @property \app\models\Profile $profile
  * @property \app\models\SocialAccount[] $socialAccounts
@@ -38,7 +39,7 @@ class User extends BaseDektriumUser
     {
         return [
             [['username', 'email', 'password_hash', 'auth_key', 'created_at', 'updated_at'], 'required'],
-            [['confirmed_at', 'blocked_at', 'created_at', 'updated_at', 'flags', 'last_login_at'], 'integer'],
+            [['confirmed_at', 'blocked_at', 'created_at', 'updated_at', 'flags', 'last_login_at', 'is_ai'], 'integer'],
             [['username', 'email', 'unconfirmed_email'], 'string', 'max' => 255],
             [['password_hash'], 'string', 'max' => 60],
             [['auth_key'], 'string', 'max' => 32],
@@ -73,6 +74,7 @@ class User extends BaseDektriumUser
             'registration_ip' => 'Registration Ip',
             'flags' => 'Flags',
             'last_login_at' => 'Last Login At',
+            'is_ai' => 'AI',
         ];
     }
 

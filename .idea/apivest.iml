@@ -172,7 +172,9 @@
           <root url="file://$MODULE_DIR$/vendor/kartik-v/bootstrap-star-rating" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/bootstrap-tabs-x" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/dependent-dropdown" />
+          <root url="file://$MODULE_DIR$/vendor/kartik-v/php-date-formatter" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-builder" />
+          <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-datecontrol" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-dialog" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-dynagrid" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-export" />
@@ -281,7 +283,9 @@
           <root url="file://$MODULE_DIR$/vendor/kartik-v/bootstrap-star-rating" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/bootstrap-tabs-x" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/dependent-dropdown" />
+          <root url="file://$MODULE_DIR$/vendor/kartik-v/php-date-formatter" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-builder" />
+          <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-datecontrol" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-dialog" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-dynagrid" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-export" />
