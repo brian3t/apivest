@@ -28,6 +28,7 @@ class WorldController extends Controller
                 $profile->name = $faker->firstName . ' ' . $faker->lastName;
                 $profile->city = $faker->city;
                 $profile->state = $faker_addr = Faker\Provider\en_US\Address::state();
+                $profile->ai_point = 0;
                 $profile->save();
             }
         }
