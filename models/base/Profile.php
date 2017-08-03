@@ -17,8 +17,10 @@ use Yii;
  * @property string $bio
  * @property string $timezone
  * @property string $city
+ * @property string $state_abbr
  * @property string $state
  * @property integer $ai_point
+ * @property integer $point
  *
  * @property \app\models\User $user
  */
@@ -49,6 +51,7 @@ class Profile extends \yii\db\ActiveRecord
             [['bio'], 'string'],
             [['name', 'public_email', 'gravatar_email', 'location', 'website'], 'string', 'max' => 255],
             [['gravatar_id'], 'string', 'max' => 32],
+            [['state_abbr'], 'string', 'max' => 8],
             [['timezone', 'state'], 'string', 'max' => 40],
             [['city'], 'string', 'max' => 80]
         ];
