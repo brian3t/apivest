@@ -19,7 +19,6 @@ use dektrium\user\models\UserSearch;
 use dektrium\user\Module;
 use dektrium\user\traits\AjaxValidationTrait;
 use dektrium\user\traits\EventTrait;
-use phpDocumentor\Reflection\Exception;
 use Yii;
 use yii\authclient\AuthAction;
 use yii\authclient\ClientInterface;
