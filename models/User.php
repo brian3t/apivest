@@ -22,6 +22,23 @@ class User extends \app\models\base\User
         return $scenarios;
     }
 
+    /**
+     * @return array Fields for REST API calls
+     */
+    public function fields()
+    {
+        return [
+            'id',
+            'username',
+            'email',
+            'last_login_at',
+            'is_ai',
+            'is_admin',
+            'portfolio'=>function(){
+                return $this->getPortfolio();
+            }
+        ];
+    }
     public function rules()
     {
         $rules = parent::rules();

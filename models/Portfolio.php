@@ -33,11 +33,12 @@ class Portfolio
             else {
                 $stocks[$t->stock_id]['qty']--;
             }
+            $stocks[$t->stock_id]['model'] = $t->stock;
         }
         $total_unit_cost = 0;
         $total_real_time_value = 0;
         $total_change_since_last_traded = 0;
-        foreach ($stocks as $stock_id => $stock) {
+        foreach ($stocks as $stock_id => &$stock) {
             if ($stock['qty'] == 0) {
                 unset($stocks[$stock_id]);
                 continue;
@@ -45,7 +46,6 @@ class Portfolio
             $total_unit_cost += ($stock['transaction'])->unit_cost;
             $total_real_time_value += ($stock['transaction'])->stock->real_time_value;
             $total_change_since_last_traded += ($stock['transaction'])->change_since_last_traded;
-
         }
         $this->stocks = $stocks;
         $this->average_unit_cost = (count($stocks) > 0) ? $total_unit_cost / (count($stocks)) : 0;

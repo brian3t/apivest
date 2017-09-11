@@ -127,40 +127,20 @@ class UserController extends BaseActiveController
             return json_encode($user->errors);
         }
 
-//        $order_new = $this->requestbody->order;
-//
-//        $order = Order::find()->where(['retailops_order_id' => $order_new->retailops_order_id]);
-//        if (!$order->exists()) {
-//            $this->rop_response->add_error('Can not find order using retailops_order_id');
-//            $order = Order::find()->where(['channel_refnum' => $this->requestbody->order->channel_order_refnum]);
-//            if (!$order->exists()) {
-//                $this->rop_response->add_error('Can not find order using channel_order_refnum');
-//            }
-//        }
-//        if ($order->exists()) {
-//            $order = $order->one();/* @var Order $order */;
-//
-//            $order->unlinkAll('orderReturns', true);
-//            $rmas = ArrayHelper::toArray($this->requestbody->rmas);
-//            foreach ($rmas as $rma_data) {
-//                $return_items = $rma_data['items'];
-//                unset($rma_data['items']);
-//
-//                $rma = new OrderReturn();
-//                $rma->loadAll(['OrderReturn' => $rma_data, 'OrderReturnItem' => $return_items]);
-//                $rma->link('order', $order);
-//                if (!$rma->saveAll()) {
-//                    $this->rop_response->pull_error($rma);
-//                };
-//            }
-//
-//            //updating order
-//            $order->setAttribute('product_total', $order_new->grand_total);
-//            $order->save();
-//            $order->unlinkAll('orderShipments', true);
-//        }
-//
-//
-//        return $this->rop_response->print();
+    }
+
+    public function actionPortfolio(){
+        $res = [];
+        $request=Yii::$app->request;
+        $id=$request->get('id');
+        if (!$id){
+            return "No user id";
+        }
+        $user=\app\models\User::findOne($id);
+        if($user->id!=$id)
+        {
+            return "Cannot find this user";
+        }
+        return $user->getPortfolio();
     }
 }

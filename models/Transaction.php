@@ -13,6 +13,21 @@ use \app\models\base\Transaction as BaseTransaction;
  */
 class Transaction extends BaseTransaction
 {
+    /**
+     * @return array Fields for REST API calls
+     */
+    public function fields()
+    {
+        return [
+            'id',
+            'stock_id',
+            'is_buying',
+            'created_at',
+            'unit_cost',
+            'gain',
+            'change_since_last_traded_percent'
+        ];
+    }
     public function getLast_txn_same_stock()
     {
         if ($this->is_buying) return false;
