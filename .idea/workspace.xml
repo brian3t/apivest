@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="778512b5-d358-4f4f-a773-b66906b65f1a" name="Default" comment="">
+    <list default="true" id="778512b5-d358-4f4f-a773-b66906b65f1a" name="Default" comment="User rest fields to include Portfolio. Portfolio includes extra fields.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/modules/v1/controllers/UserController.php" afterPath="$PROJECT_DIR$/api/modules/v1/controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Portfolio.php" afterPath="$PROJECT_DIR$/models/Portfolio.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Transaction.php" afterPath="$PROJECT_DIR$/models/Transaction.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/User.php" afterPath="$PROJECT_DIR$/models/User.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,12 +32,6 @@
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
         <item name="msilinux" type="e3449647:DbNodeDescriptor" />
         <item name="vest" type="e3449647:DbNodeDescriptor" />
-      </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="msilinux" type="e3449647:DbNodeDescriptor" />
-        <item name="vest" type="e3449647:DbNodeDescriptor" />
-        <item name="transaction" type="e3449647:DbNodeDescriptor" />
       </path>
       <path>
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
@@ -80,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="37" column="45" lean-forward="false" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
+            <state relative-caret-position="510">
+              <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
               <folding>
                 <marker date="1505105290451" expanded="true" signature="1369:1873" ph="..." />
                 <marker date="1505105290451" expanded="true" signature="1403:1873" ph="..." />
@@ -105,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Transaction.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Transaction.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/Transaction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="27" column="45" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="45" />
+            <state relative-caret-position="746">
+              <caret line="58" column="30" lean-forward="false" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -303,8 +294,8 @@
         <option value="$PROJECT_DIR$/api/config/api.php" />
         <option value="$PROJECT_DIR$/api/modules/v1/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/models/Portfolio.php" />
-        <option value="$PROJECT_DIR$/models/Transaction.php" />
         <option value="$PROJECT_DIR$/models/User.php" />
+        <option value="$PROJECT_DIR$/models/Transaction.php" />
       </list>
     </option>
   </component>
@@ -598,6 +589,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -742,7 +734,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1143,18 +1134,26 @@
       <option name="project" value="LOCAL" />
       <updated>1503900204534</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="User rest fields to include Portfolio. Portfolio includes extra fields.">
+      <created>1505111418583</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1505111418583</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-1" width="1924" height="1059" extended-state="6" />
+    <frame x="-1" y="-1" width="1920" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1140625" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39454356" sideWeight="0.5028369" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1515625" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1515625" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983193" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1212,7 +1211,8 @@
     <MESSAGE value="Fix signup error." />
     <MESSAGE value="Fix profile point initial." />
     <MESSAGE value="Login using form-encoded." />
-    <option name="LAST_COMMIT_MESSAGE" value="Login using form-encoded." />
+    <MESSAGE value="User rest fields to include Portfolio. Portfolio includes extra fields." />
+    <option name="LAST_COMMIT_MESSAGE" value="User rest fields to include Portfolio. Portfolio includes extra fields." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2550,14 +2550,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Transaction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="27" column="45" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/Portfolio.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -2568,14 +2560,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="45" lean-forward="false" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
+        <state relative-caret-position="510">
+          <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
           <folding>
             <marker date="1505105290451" expanded="true" signature="1369:1873" ph="..." />
             <marker date="1505105290451" expanded="true" signature="1403:1873" ph="..." />
             <marker date="1505105290451" expanded="true" signature="1410:1873" ph="..." />
             <marker date="1505105290451" expanded="true" signature="1415:1873" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Transaction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="746">
+          <caret line="58" column="30" lean-forward="false" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
