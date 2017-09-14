@@ -242,7 +242,7 @@ client_id</ColNames>
     </column>
     <column id="61" parent="8" name="last_sale">
       <Position>4</Position>
-      <DataType>decimal(10,4)|0</DataType>
+      <DataType>decimal(10,2)|0</DataType>
     </column>
     <column id="62" parent="8" name="last_sale_text">
       <Position>5</Position>
