@@ -71,11 +71,10 @@ $config = [
     'modules' => [
         'user' => [
             'class' => 'dektrium\user\Module',
-            'admins' => ['ngxtri', 'someids'],
+            'admins' => ['ngxtri', 'ngxtri@gmail.com'],
             'controllerMap' => [
                 'security' => [
-                    'class' => 'app\controllers\user\SecurityController'
-                    ,
+                    'class' => 'app\controllers\user\SecurityController',
                     'on afterLogout' => function ($e) {
                         Yii::$app->getSession()->addFlash('success', 'You have logged out successfully');
                     }

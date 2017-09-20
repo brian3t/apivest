@@ -49,11 +49,11 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
         ],
-
     ],
     'modules' => [
         'user' => [
             'class' => 'dektrium\user\Module',
+            'admins' => ['ngxtri', 'ngxtri@gmail.com'],
             'modelMap' => [
                 'User' => 'app\models\User'
             ]],
@@ -65,7 +65,6 @@ $config = [
             'class' => '\kartik\datecontrol\Module',
             // see settings on http://demos.krajee.com/datecontrol#module
         ],
-
     ],
     'params' => $params,
 ];

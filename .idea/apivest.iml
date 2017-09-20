@@ -151,6 +151,12 @@
       <library name="PHP" type="php">
         <CLASSES>
           <root url="file://$MODULE_DIR$/vendor/behat/gherkin" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/bootstrap" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/jquery" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/jquery.inputmask" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/punycode" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/typeahead.js" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/yii2-pjax" />
           <root url="file://$MODULE_DIR$/vendor/bower/bootstrap" />
           <root url="file://$MODULE_DIR$/vendor/bower/bootstrap3-dialog" />
           <root url="file://$MODULE_DIR$/vendor/bower/jquery" />
@@ -262,6 +268,12 @@
         <JAVADOC />
         <SOURCES>
           <root url="file://$MODULE_DIR$/vendor/behat/gherkin" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/bootstrap" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/jquery" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/jquery.inputmask" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/punycode" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/typeahead.js" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/yii2-pjax" />
           <root url="file://$MODULE_DIR$/vendor/bower/bootstrap" />
           <root url="file://$MODULE_DIR$/vendor/bower/bootstrap3-dialog" />
           <root url="file://$MODULE_DIR$/vendor/bower/jquery" />
